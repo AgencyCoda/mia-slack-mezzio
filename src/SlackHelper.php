@@ -18,9 +18,9 @@ class SlackHelper
         $this->guzzle = new \GuzzleHttp\Client();
     }
 
-    public function postMessage($webhookUrl, $message)
+    public function postMessage($webhookUrl, $message, $blocks = [])
     {
-        return $this->generateJsonRequest($webhookUrl, array('text' => $message));
+        return $this->generateJsonRequest($webhookUrl, array('text' => $message, 'blocks' => $blocks));
     }
 
     protected function generateJsonRequest($url, $params = null)
