@@ -7,11 +7,15 @@ use GuzzleHttp\Psr7\Request;
 class SlackHelper
 {
     /**
+     * @var \GuzzleHttp\Client
+     */
+    protected $guzzle;
+    /**
      * 
      */
     public function __construct()
     {
-        
+        $this->guzzle = new \GuzzleHttp\Client();
     }
 
     public function postMessage($webhookUrl, $message)
