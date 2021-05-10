@@ -27,7 +27,7 @@ class SlackHelper
     {
         $body = null;
         if($params != null){
-            $body = json_encode($params);
+            $body = json_encode($params, JSON_UNESCAPED_SLASHES);
         }
 
         $request = new Request(
